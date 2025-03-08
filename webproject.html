@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Society Digital Hub and Archives</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+        }
+        header {
+            background-color: #0d6efd;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background: #1e1e1e;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            width: 280px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .card h3 {
+            margin: 10px 0;
+            color: #0d6efd;
+        }
+        .card p {
+            font-size: 14px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Computer Society Digital Hub and Archives
+    </header>
+    <div class="container" id="profiles">
+        <!-- Profiles will be inserted here dynamically -->
+    </div>
+    <script>
+        const profiles = [
+            { name: "John Doe", img: "https://via.placeholder.com/200", description: "Cybersecurity expert and digital advocate." },
+            { name: "Jane Smith", img: "https://via.placeholder.com/200", description: "AI researcher pushing the boundaries of technology." },
+            { name: "Mark Johnson", img: "https://via.placeholder.com/200", description: "Software engineer revolutionizing cloud computing." }
+        ];
+
+        const profileContainer = document.getElementById("profiles");
+
+        profiles.forEach(profile => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+            card.innerHTML = `
+                <img src="${profile.img}" alt="${profile.name}">
+                <h3>${profile.name}</h3>
+                <p>${profile.description}</p>
+            `;
+            profileContainer.appendChild(card);
+        });
+    </script>
+</body>
+</html>
